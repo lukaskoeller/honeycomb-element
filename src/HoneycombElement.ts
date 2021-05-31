@@ -1,52 +1,100 @@
 import { html, css, LitElement, property, state } from 'lit-element';
+import { classMap } from 'lit-html/directives/class-map';
 
 export class HoneycombElement extends LitElement {
   static styles = css`
     :host {
+      --primary-color: #000;
+
       display: block;
-      padding: 25px;
-      color: var(--honeycomb-element-text-color, #000);
+      padding: 250px;
+      color: var(--light-color, #fff);
     }
 
-    .group {
+    .container {
       position: relative;
     }
 
-    .item {
+    .group {
+      --size: 160px;
       position: absolute;
       top: 0;
       left: 0;
+      aspect-ratio: 1/1;
+      width: min(100%, var(--size));
+    }
+
+    .group:nth-of-type(1) {
+      transform: translate(0%, -100%);
+    }
+
+    .group:nth-of-type(2) {
+      transform: translate(84%, -50%);
+    }
+
+    .group:nth-of-type(3) {
+      transform: translate(84%, 50%);
+    }
+
+    .group:nth-of-type(4) {
+      transform: translate(0%, 100%);
+    }
+
+    .group:nth-of-type(5) {
+      transform: translate(-84%, 50%);
+    }
+
+    .group:nth-of-type(6) {
+      transform: translate(-84%, -50%);
+    }
+
+    .item {
+      --size: 100%;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: calc(var(--size) / -2);
+      margin-top: calc(var(--size) / -2);
       content: '';
       display: grid;
       place-items: center;
 
-      width: 160px;
+      width: var(--size);
       aspect-ratio: 1/1;
       clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
-      background-color: blue;
+      background-color: var(--primary-color);
+
+      transition: 0.35s ease;
     }
 
-    .active .item:nth-of-type(1) {
+    .item.active,
+    .item.center {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .active.item:nth-of-type(1) {
       transform: translate(0%, -100%);
     }
 
-    .active .item:nth-of-type(2) {
+    .active.item:nth-of-type(2) {
       transform: translate(84%, -50%);
     }
 
-    .active .item:nth-of-type(3) {
+    .active.item:nth-of-type(3) {
       transform: translate(84%, 50%);
     }
 
-    .active .item:nth-of-type(4) {
+    .active.item:nth-of-type(4) {
       transform: translate(0%, 100%);
     }
 
-    .active .item:nth-of-type(5) {
+    .active.item:nth-of-type(5) {
       transform: translate(-84%, 50%);
     }
 
-    .active .item:nth-of-type(6) {
+    .active.item:nth-of-type(6) {
       transform: translate(-84%, -50%);
     }
 
@@ -58,10 +106,6 @@ export class HoneycombElement extends LitElement {
       text-align: center;
     }
   `;
-
-  @property({ type: String }) title = 'Hey there';
-
-  @property({ type: Number }) counter = 5;
 
   @property({ type: Array }) items = [
     [
@@ -94,14 +138,70 @@ export class HoneycombElement extends LitElement {
         content: 'Lorem ipsum...',
       },
     ],
+    [
+      {
+        heading: 'Hallo8',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo9',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo10',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo11',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo12',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo13',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo14',
+        content: 'Lorem ipsum...',
+      },
+    ],
+    [
+      {
+        heading: 'Hallo8',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo9',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo10',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo11',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo12',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo13',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo14',
+        content: 'Lorem ipsum...',
+      },
+    ],
   ];
 
   @state()
   protected _active = false;
-
-  __increment() {
-    this.counter += 1;
-  }
 
   __toggle() {
     this._active = !this._active;
@@ -109,16 +209,22 @@ export class HoneycombElement extends LitElement {
 
   render() {
     return html`
-      <h2>${this.title} Nr. ${this.counter}!</h2>
-      <button @click=${this.__increment}>increment</button>
-      ${this.items.map(
-        group =>
-          html`
+      <div class="container">
+        ${this.items.map(
+          group => html`
             <div class="group">
               ${group.map(
-                item =>
+                (item, index) =>
                   html`
-                    <div class="item">
+                    <div
+                      class=${classMap({
+                        item: true,
+                        active: this._active,
+                        center: index === 6,
+                      })}
+                      @click=${this.__toggle}
+                      @keydown
+                    >
                       <div>
                         <h6 class="heading">${item.heading}</h6>
                         <p class="content">${item.content}</p>
@@ -128,7 +234,8 @@ export class HoneycombElement extends LitElement {
               )}
             </div>
           `
-      )}
+        )}
+      </div>
     `;
   }
 }
