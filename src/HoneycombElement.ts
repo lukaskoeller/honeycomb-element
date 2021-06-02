@@ -4,7 +4,10 @@ import { classMap } from 'lit-html/directives/class-map';
 export class HoneycombElement extends LitElement {
   static styles = css`
     :host {
-      --primary-color: #000;
+      --primary-color-hsl: 0, 0%, 0%;
+      --primary-color: hsl(var(--primary-color-hsl));
+      --primary-color-lighten-1: hsl(0, 0%, 80%);
+      --transition: 0.35s ease;
 
       display: block;
       padding: 250px;
@@ -22,6 +25,17 @@ export class HoneycombElement extends LitElement {
       left: 0;
       aspect-ratio: 1/1;
       width: min(100%, var(--size));
+
+      transition: var(--transition);
+    }
+
+    .group.inBackground {
+      z-index: -1;
+    }
+
+    .group.inBackground .item {
+      transform: scale(0.9);
+      background-color: var(--primary-color-lighten-1);
     }
 
     .group:nth-of-type(1) {
@@ -65,13 +79,7 @@ export class HoneycombElement extends LitElement {
       clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
       background-color: var(--primary-color);
 
-      transition: 0.35s ease;
-    }
-
-    .item.active,
-    .item.center {
-      transform: scale(1);
-      opacity: 1;
+      transition: var(--transition);
     }
 
     .active.item:nth-of-type(1) {
@@ -198,39 +206,165 @@ export class HoneycombElement extends LitElement {
         content: 'Lorem ipsum...',
       },
     ],
+    [
+      {
+        heading: 'Hallo8',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo9',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo10',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo11',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo12',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo13',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo14',
+        content: 'Lorem ipsum...',
+      },
+    ],
+    [
+      {
+        heading: 'Hallo8',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo9',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo10',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo11',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo12',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo13',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo14',
+        content: 'Lorem ipsum...',
+      },
+    ],
+    [
+      {
+        heading: 'Hallo8',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo9',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo10',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo11',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo12',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo13',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo14',
+        content: 'Lorem ipsum...',
+      },
+    ],
+    [
+      {
+        heading: 'Hallo8',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo9',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo10',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo11',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo12',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo13',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo14',
+        content: 'Lorem ipsum...',
+      },
+    ],
   ];
 
   @state()
-  protected _active = false;
+  protected _active: any = false;
 
-  __toggle() {
-    this._active = !this._active;
+  __toggle(index: Number) {
+    this._active = this._active === index ? false : index;
   }
 
   render() {
     return html`
       <div class="container">
         ${this.items.map(
-          group => html`
-            <div class="group">
+          (group, index) => html`
+            <div
+              class=${classMap({
+                group: true,
+                inBackground:
+                  index !== this._active && Number.isInteger(this._active),
+              })}
+              @click=${() => this.__toggle(index)}
+              @keydown
+            >
               ${group.map(
-                (item, index) =>
-                  html`
-                    <div
-                      class=${classMap({
-                        item: true,
-                        active: this._active,
-                        center: index === 6,
-                      })}
-                      @click=${this.__toggle}
-                      @keydown
-                    >
-                      <div>
-                        <h6 class="heading">${item.heading}</h6>
-                        <p class="content">${item.content}</p>
-                      </div>
+                (item, index1) => html`
+                  <div
+                    data-index=${index}
+                    class=${classMap({
+                      item: true,
+                      active: this._active === index,
+                      center: index1 === 6,
+                    })}
+                  >
+                    <div>
+                      <h6 class="heading">${item.heading}</h6>
+                      <p class="content">${item.content}</p>
                     </div>
-                  `
+                  </div>
+                `
               )}
             </div>
           `
