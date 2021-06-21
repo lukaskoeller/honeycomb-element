@@ -103,30 +103,6 @@ export class HoneycombElement extends LitElement {
         heading: 'Hallo1',
         content: 'Lorem ipsum...',
       },
-      {
-        heading: 'Hallo2',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo3',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo4',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo5',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo6',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo7',
-        content: 'Lorem ipsum...',
-      },
     ],
     [
       {
