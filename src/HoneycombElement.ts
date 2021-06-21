@@ -38,30 +38,6 @@ export class HoneycombElement extends LitElement {
       background-color: var(--primary-color-lighten-1);
     }
 
-    .group:nth-of-type(1) {
-      transform: translate(0%, -100%);
-    }
-
-    .group:nth-of-type(2) {
-      transform: translate(84%, -50%);
-    }
-
-    .group:nth-of-type(3) {
-      transform: translate(84%, 50%);
-    }
-
-    .group:nth-of-type(4) {
-      transform: translate(0%, 100%);
-    }
-
-    .group:nth-of-type(5) {
-      transform: translate(-84%, 50%);
-    }
-
-    .group:nth-of-type(6) {
-      transform: translate(-84%, -50%);
-    }
-
     .item {
       --size: 100%;
 
@@ -82,27 +58,33 @@ export class HoneycombElement extends LitElement {
       transition: var(--transition);
     }
 
-    .active.item:nth-of-type(1) {
+    .active.item:nth-of-type(7),
+    .group:nth-of-type(7) {
       transform: translate(0%, -100%);
     }
 
-    .active.item:nth-of-type(2) {
+    .active.item:nth-of-type(2),
+    .group:nth-of-type(2) {
       transform: translate(84%, -50%);
     }
 
-    .active.item:nth-of-type(3) {
+    .active.item:nth-of-type(3),
+    .group:nth-of-type(3) {
       transform: translate(84%, 50%);
     }
 
-    .active.item:nth-of-type(4) {
+    .active.item:nth-of-type(4),
+    .group:nth-of-type(4) {
       transform: translate(0%, 100%);
     }
 
-    .active.item:nth-of-type(5) {
+    .active.item:nth-of-type(5),
+    .group:nth-of-type(5) {
       transform: translate(-84%, 50%);
     }
 
-    .active.item:nth-of-type(6) {
+    .active.item:nth-of-type(6),
+    .group:nth-of-type(6) {
       transform: translate(-84%, -50%);
     }
 
