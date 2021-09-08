@@ -14,33 +14,32 @@ interface ItemInterface {
 export class HoneycombElement extends LitElement {
   static styles = css`
     :host {
-      --primary-color-hsl: 0, 0%, 0%;
-      --primary-color: hsl(var(--primary-color-hsl));
+      --honeycomb-font-family: 'FlamaSemicondensed', 'Roboto Condensed',
+        'Helvetica Neue', Arial, sans-serif;
+      --honeycomb-global-size: 160px;
+      --honeycomb-primary-color: hsl(0, 0%, 0%);
       --primary-color-lighten-1: hsl(0, 0%, 80%);
       --primary-color-lighten-2: hsl(0, 0%, 90%);
       --primary-color-lighten-3: hsl(0, 0%, 95%);
       --transition: 0.35s ease;
-      --global-size: 160px;
       --base-spacing: 4px;
       --base-radius: 4px;
-      --font-family: 'FlamaSemicondensed', 'Roboto Condensed', 'Helvetica Neue',
-        Arial, sans-serif;
       --font-size: 100%;
 
-      font-family: var(--font-family);
+      font-family: var(--honeycomb-font-family);
       font-size: var(--font-size);
       color: var(--light-color, #fff);
     }
 
     .container {
       position: relative;
-      width: calc(var(--global-size) * 5);
-      height: calc(var(--global-size) * 5);
+      width: calc(var(--honeycomb-global-size) * 5);
+      height: calc(var(--honeycomb-global-size) * 5);
       margin: auto;
     }
 
     .group {
-      --size: var(--global-size);
+      --size: var(--honeycomb-global-size);
       position: absolute;
       top: 50%;
       left: 50%;
@@ -58,7 +57,7 @@ export class HoneycombElement extends LitElement {
 
     .group.inBackground .item {
       transform: scale(0.9);
-      background-color: var(--primary-color-lighten-1);
+      background-color: var(--honeycomb-primary-color-lighten-1);
     }
 
     .item {
@@ -73,7 +72,7 @@ export class HoneycombElement extends LitElement {
       width: var(--size);
       aspect-ratio: 1/1;
       clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
-      background-color: var(--primary-color);
+      background-color: var(--honeycomb-primary-color);
       overflow: hidden;
 
       cursor: pointer;
@@ -82,7 +81,7 @@ export class HoneycombElement extends LitElement {
     }
 
     .image {
-      --image-size: calc(var(--global-size) / 3);
+      --image-size: calc(var(--honeycomb-global-size) / 3);
 
       margin: 0 auto;
       margin-bottom: calc(var(--base-spacing) * 2);
@@ -152,10 +151,10 @@ export class HoneycombElement extends LitElement {
       display: block;
       box-sizing: border-box;
       padding: calc(var(--base-spacing) * 3);
-      background-color: var(--primary-color-lighten-2);
+      background-color: var(--honeycomb-primary-color-lighten-2);
       border-radius: var(--base-radius);
       text-align: center;
-      color: var(--primary-color);
+      color: var(--honeycomb-primary-color);
     }
   `;
 
