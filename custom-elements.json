@@ -29,6 +29,11 @@
           "name": "--honeycomb-primary-color",
           "description": "Main Color",
           "type": "Color"
+        },
+        {
+          "name": "--honeycomb-text-color",
+          "description": "Main Text Color",
+          "type": "Color"
         }
       ]
     }
