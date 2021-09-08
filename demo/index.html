@@ -15,10 +15,203 @@
     import { html, render } from 'lit-html';
     import '../dist/honeycomb-element.js';
 
+    const items = [
+    [
+      {
+        heading: 'Hallo1',
+        content: 'Lorem ipsum...',
+        image: {
+          src: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzJ8fHBvcnRyYWl0fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=600',
+          title: 'Falscher Hase',
+        }
+      },
+    ],
+    [
+      {
+        heading: 'Hallo8',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo9',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo10',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo11',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo12',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo13',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo14',
+        content: 'Lorem ipsum...',
+      },
+    ],
+    [
+      {
+        heading: 'Hallo8',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo9',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo10',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo11',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo12',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo13',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo14',
+        content: 'Lorem ipsum...',
+      },
+    ],
+    [
+      {
+        heading: 'Hallo8',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo9',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo10',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo11',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo12',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo13',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo14',
+        content: 'Lorem ipsum...',
+      },
+    ],
+    [
+      {
+        heading: 'Hallo8',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo9',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo10',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo11',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo12',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo13',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo14',
+        content: 'Lorem ipsum...',
+      },
+    ],
+    [
+      {
+        heading: 'Hallo8',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo9',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo10',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo11',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo12',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo13',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo14',
+        content: 'Lorem ipsum...',
+      },
+    ],
+    [
+      {
+        heading: 'Hallo8',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo9',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo10',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo11',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo12',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo13',
+        content: 'Lorem ipsum...',
+      },
+      {
+        heading: 'Hallo14',
+        content: 'Lorem ipsum...',
+      },
+    ],
+  ]
+
     const title = 'Hello owc World!';
     render(
       html`
-        <honeycomb-element .title=${title}>
+        <honeycomb-element .title=${title} .items=${items}>
           some more light-dom
         </honeycomb-element>
       `,
