@@ -3,27 +3,31 @@
   "tags": [
     {
       "name": "honeycomb-element",
-      "description": "A component with a title and an action counter",
+      "description": "A simple two layer honeycomb component for visualizing hierarchy trees with a max of 6 children per node.",
       "properties": [
         {
-          "name": "title",
-          "type": "String",
-          "description": "The title of your component",
-          "default": "Hey there"
-        },
-        {
-          "name": "counter",
-          "type": "Number",
-          "description": "An action counter",
-          "default": 0
+          "name": "items",
+          "type": "Object",
+          "description": "Provides the honeycomb with data using an array with 7 nested arrays containing 7 objects.",
+          "default": []
         }
       ],
       "events": [],
       "slots": [],
       "cssProperties": [
         {
-          "name": "--honeycomb-element-text-color",
-          "description": "Main Text Color",
+          "name": "--honeycomb-font-family",
+          "description": "Main Font Family",
+          "type": "FontFamily"
+        },
+        {
+          "name": "--honeycomb-global-size",
+          "description": "Main Size of Each Element",
+          "type": "Size"
+        },
+        {
+          "name": "--honeycomb-primary-color",
+          "description": "Main Color",
           "type": "Color"
         }
       ]
