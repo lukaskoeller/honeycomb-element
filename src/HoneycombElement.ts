@@ -1,5 +1,15 @@
 import { html, css, LitElement, property, state } from 'lit-element';
 import { classMap } from 'lit-html/directives/class-map';
+import { styleMap } from 'lit-html/directives/style-map.js';
+
+interface ItemInterface {
+  heading: string;
+  content?: string;
+  image?: {
+    src: string;
+    title?: string;
+  };
+}
 
 export class HoneycombElement extends LitElement {
   static styles = css`
@@ -7,22 +17,35 @@ export class HoneycombElement extends LitElement {
       --primary-color-hsl: 0, 0%, 0%;
       --primary-color: hsl(var(--primary-color-hsl));
       --primary-color-lighten-1: hsl(0, 0%, 80%);
+      --primary-color-lighten-2: hsl(0, 0%, 90%);
+      --primary-color-lighten-3: hsl(0, 0%, 95%);
       --transition: 0.35s ease;
+      --global-size: 160px;
+      --base-spacing: 4px;
+      --base-radius: 4px;
+      --font-family: 'FlamaSemicondensed', 'Roboto Condensed', 'Helvetica Neue',
+        Arial, sans-serif;
+      --font-size: 100%;
 
-      display: block;
-      padding: 250px;
+      font-family: var(--font-family);
+      font-size: var(--font-size);
       color: var(--light-color, #fff);
     }
 
     .container {
       position: relative;
+      width: calc(var(--global-size) * 5);
+      height: calc(var(--global-size) * 5);
+      margin: auto;
     }
 
     .group {
-      --size: 160px;
+      --size: var(--global-size);
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 50%;
+      left: 50%;
+      margin-left: calc(var(--size) / -2);
+      margin-top: calc(var(--size) / -2);
       aspect-ratio: 1/1;
       width: min(100%, var(--size));
 
@@ -42,10 +65,7 @@ export class HoneycombElement extends LitElement {
       --size: 100%;
 
       position: absolute;
-      top: 50%;
-      left: 50%;
-      margin-left: calc(var(--size) / -2);
-      margin-top: calc(var(--size) / -2);
+
       content: '';
       display: grid;
       place-items: center;
@@ -54,8 +74,31 @@ export class HoneycombElement extends LitElement {
       aspect-ratio: 1/1;
       clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
       background-color: var(--primary-color);
+      overflow: hidden;
+
+      cursor: pointer;
 
       transition: var(--transition);
+    }
+
+    .image {
+      --image-size: calc(var(--global-size) / 3);
+
+      margin: 0 auto;
+      margin-bottom: calc(var(--base-spacing) * 2);
+
+      width: var(--image-size);
+      height: var(--image-size);
+      border-radius: 100%;
+      overflow: hidden;
+
+      box-shadow: 0px 0px 0px 2px white;
+    }
+
+    .img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .active.item:nth-of-type(7),
@@ -95,238 +138,93 @@ export class HoneycombElement extends LitElement {
       color: white;
       text-align: center;
     }
+
+    .heading {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+    }
+
+    .content {
+      font-size: 0.8rem;
+    }
+
+    code {
+      display: block;
+      box-sizing: border-box;
+      padding: calc(var(--base-spacing) * 3);
+      background-color: var(--primary-color-lighten-2);
+      border-radius: var(--base-radius);
+      text-align: center;
+      color: var(--primary-color);
+    }
   `;
 
-  @property({ type: Array }) items = [
-    [
-      {
-        heading: 'Hallo1',
-        content: 'Lorem ipsum...',
-      },
-    ],
-    [
-      {
-        heading: 'Hallo8',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo9',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo10',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo11',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo12',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo13',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo14',
-        content: 'Lorem ipsum...',
-      },
-    ],
-    [
-      {
-        heading: 'Hallo8',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo9',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo10',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo11',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo12',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo13',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo14',
-        content: 'Lorem ipsum...',
-      },
-    ],
-    [
-      {
-        heading: 'Hallo8',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo9',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo10',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo11',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo12',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo13',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo14',
-        content: 'Lorem ipsum...',
-      },
-    ],
-    [
-      {
-        heading: 'Hallo8',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo9',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo10',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo11',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo12',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo13',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo14',
-        content: 'Lorem ipsum...',
-      },
-    ],
-    [
-      {
-        heading: 'Hallo8',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo9',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo10',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo11',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo12',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo13',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo14',
-        content: 'Lorem ipsum...',
-      },
-    ],
-    [
-      {
-        heading: 'Hallo8',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo9',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo10',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo11',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo12',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo13',
-        content: 'Lorem ipsum...',
-      },
-      {
-        heading: 'Hallo14',
-        content: 'Lorem ipsum...',
-      },
-    ],
-  ];
+  @property({ type: Array }) items: ItemInterface[][] = [];
 
   @state()
   protected _active: any = false;
 
-  __toggle(index: Number) {
+  __toggle(index: Number | Boolean) {
     this._active = this._active === index ? false : index;
+  }
+
+  __close() {
+    this._active = false;
   }
 
   render() {
     return html`
       <div class="container">
-        ${this.items.map(
-          (group, index) => html`
-            <div
-              class=${classMap({
-                group: true,
-                inBackground:
-                  index !== this._active && Number.isInteger(this._active),
-              })}
-              @click=${() => this.__toggle(index)}
-              @keydown
-            >
-              ${group.map(
-                (item, index1) => html`
-                  <div
-                    data-index=${index}
-                    class=${classMap({
-                      item: true,
-                      active: this._active === index,
-                      center: index1 === 6,
-                    })}
-                  >
-                    <div>
-                      <h6 class="heading">${item.heading}</h6>
-                      <p class="content">${item.content}</p>
-                    </div>
-                  </div>
-                `
-              )}
-            </div>
-          `
-        )}
+        ${this?.items?.length !== 0
+          ? this.items.map(
+              (group, index) => html`
+                <div
+                  class=${classMap({
+                    group: true,
+                    inBackground:
+                      index !== this._active && Number.isInteger(this._active),
+                  })}
+                  @click=${() => this.__toggle(index === 0 ? false : index)}
+                  @keydown
+                >
+                  ${group.map(
+                    (item, index1: Number) => html`
+                      <div
+                        style=${styleMap({
+                          ...(item?.image?.src
+                            ? { backgroundImage: `url('${item?.image?.src}')` }
+                            : {}),
+                          backgroundSize: 'cover',
+                          backgroundPosition: 'center center',
+                        })}
+                        data-index=${index}
+                        class=${classMap({
+                          item: true,
+                          active: this._active === index,
+                          center: index1 === 6,
+                        })}
+                      >
+                        <div>
+                          ${item?.image
+                            ? html` <div class="image">
+                                <img
+                                  class="img"
+                                  src=${item.image.src}
+                                  alt=${item.image?.title || item.heading}
+                                  title=${item.image?.title || item.heading}
+                                />
+                              </div>`
+                            : null}
+                          <h6 class="heading">${item.heading}</h6>
+                          <p class="content">${item.content}</p>
+                        </div>
+                      </div>
+                    `
+                  )}
+                </div>
+              `
+            )
+          : html`<code>Error: Please add items to the "items" property.</code>`}
       </div>
     `;
   }
