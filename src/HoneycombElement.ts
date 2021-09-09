@@ -52,12 +52,16 @@ export class HoneycombElement extends LitElement {
       transition: var(--transition);
     }
 
+    .group > .item:first-of-type {
+      z-index: 2;
+    }
+
     .group.inBackground {
       z-index: -1;
     }
 
-    .group.inBackground .item {
-      transform: scale(0.9);
+    .group.inBackground > .item:first-of-type {
+      /* transform: scale(0.9); */
       background-color: var(--primary-color-lighten-1);
     }
 
