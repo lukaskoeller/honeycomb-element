@@ -69,5 +69,20 @@
       "eslint --fix",
       "prettier --write"
     ]
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukaskoeller/honeycomb-element.git"
+  },
+  "keywords": [
+    "web",
+    "components",
+    "hierarchy",
+    "honeycomb",
+    "hexagon"
+  ],
+  "bugs": {
+    "url": "https://github.com/lukaskoeller/honeycomb-element/issues"
+  },
+  "homepage": "https://github.com/lukaskoeller/honeycomb-element#readme"
 }
