@@ -6,6 +6,7 @@
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.js",
+  "curstomElements": "./custom-elements.json",
   "scripts": {
     "start": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds\"",
     "build": "tsc",
