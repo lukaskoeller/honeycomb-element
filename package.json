@@ -1,12 +1,12 @@
 {
   "name": "honeycomb-element",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Webcomponent honeycomb-element following open-wc recommendations",
   "author": "honeycomb-element",
   "license": "MIT",
   "type": "module",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "build/index.js",
+  "module": "build/index.js",
   "types": "dist/index.d.ts",
   "customElements": "./custom-elements.json",
   "scripts": {
