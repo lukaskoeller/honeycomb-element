@@ -29,6 +29,8 @@ The `items` property is of type `array` which itself holds a maximum of 7 nested
 of a maximum of 7 `objects` following the `ItemInterface`. Be aware, that the first nested array only contains one object
 which represents the center element which does not expand on click.
 
+For an example, see the [`/demo`](./demo) directory.
+
 ```js
 export interface ItemInterface {
   /** Heading of hexagon */
