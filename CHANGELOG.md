@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.3](https://github.com/lukaskoeller/honeycomb-element/compare/v1.1.2...v1.1.3) (2021-09-14)
+
+
+### Bug Fixes
+
+* change module path back to dist ([26dc06f](https://github.com/lukaskoeller/honeycomb-element/commit/26dc06f8c8f48b76c1737e05c84a26a3d3a0480e))
+
 ### [1.1.2](https://github.com/lukaskoeller/honeycomb-element/compare/v1.1.1...v1.1.2) (2021-09-14)
 
 
