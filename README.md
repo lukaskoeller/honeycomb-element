@@ -18,11 +18,13 @@ npm i honeycomb-element
 Another way to use the component is via the [CDN UNPKG](https://unpkg.com/browse/honeycomb-element@latest/).
 ```html
 <script type="module">
-  import 'https://unpkg.com/honeycomb-element@1.1.4/build/honeycomb-element.bundled.js';
+  import 'https://unpkg.com/honeycomb-element@latest/build/honeycomb-element.bundled.js';
 </script>
 
 <honeycomb-element></honeycomb-element>
 ```
+Note that the keyword `@latest` always points to the latest version of the honeycomb element. If you rather want to stick to a specific version, just replace `latest`
+with the according [version number](https://unpkg.com/browse/honeycomb-element@latest/) (e.g. `@1.1.4`).
 ## Properties
 The `<honeycomb-element>` allows one property naming `items`. This way, the honeycomb is provided with content.
 The `items` property is of type `array` which itself holds a maximum of 7 nested arrays. These nested arrays contain
