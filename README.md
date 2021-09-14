@@ -17,11 +17,11 @@ npm i honeycomb-element
 ```
 Another way to use the component is via the [CDN UNPKG](https://unpkg.com/browse/honeycomb-element@latest/).
 ```html
-  <script type="module">
-    import 'https://unpkg.com/honeycomb-element@1.1.4/build/honeycomb-element.bundled.js';
-  </script>
-  
-  <honeycomb-element></honeycomb-element>
+<script type="module">
+  import 'https://unpkg.com/honeycomb-element@1.1.4/build/honeycomb-element.bundled.js';
+</script>
+
+<honeycomb-element></honeycomb-element>
 ```
 ## Properties
 The `<honeycomb-element>` allows one property naming `items`. This way, the honeycomb is provided with content.
