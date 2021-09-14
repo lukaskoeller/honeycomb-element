@@ -2,11 +2,19 @@ import { html, css, LitElement, property, state } from 'lit-element';
 import { classMap } from 'lit-html/directives/class-map';
 import { styleMap } from 'lit-html/directives/style-map.js';
 
-interface ItemInterface {
+/**
+ * @description Represents one hexagon of the complete honeycomb.
+ */
+export interface ItemInterface {
+  /** Heading of hexagon */
   heading: string;
+  /** Content displayed below heading. Also functions as sub heading. */
   content?: string;
+  /** Image placed within the hexagon */
   image?: {
+    /** URL to image */
     src: string;
+    /** Title of image applied to title attribute */
     title?: string;
   };
 }
