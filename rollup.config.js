@@ -2,7 +2,6 @@ import resolve from '@rollup/plugin-node-resolve';
 import { terser } from 'rollup-plugin-terser';
 import minifyHTML from 'rollup-plugin-minify-html-literals';
 import copy from 'rollup-plugin-copy';
-import pkg from './package.json';
 
 // Static assets will vary depending on the application
 const copyConfig = {
@@ -19,9 +18,8 @@ const copyConfig = {
 const config = {
   input: 'dist/index.js',
   output: {
-    // dir: 'build',
+    dir: 'build',
     format: 'es',
-    file: `./build/honeycomb@${pkg.version}.min.js`,
   },
   plugins: [
     minifyHTML(),
