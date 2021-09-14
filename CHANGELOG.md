@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.4](https://github.com/lukaskoeller/honeycomb-element/compare/v1.1.3...v1.1.4) (2021-09-14)
+
+
+### Bug Fixes
+
+* Use different rollup config and use /build ([a118666](https://github.com/lukaskoeller/honeycomb-element/commit/a11866677be1efbd7f53768bd136694ac5903524))
+
 ### [1.1.3](https://github.com/lukaskoeller/honeycomb-element/compare/v1.1.2...v1.1.3) (2021-09-14)
 
 
