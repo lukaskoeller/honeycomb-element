@@ -1,36 +1,37 @@
+// Import rollup plugins
+import html from '@web/rollup-plugin-html';
+import {copy} from '@web/rollup-plugin-copy';
 import resolve from '@rollup/plugin-node-resolve';
-import { terser } from 'rollup-plugin-terser';
+import {terser} from 'rollup-plugin-terser';
 import minifyHTML from 'rollup-plugin-minify-html-literals';
-import copy from 'rollup-plugin-copy';
+import summary from 'rollup-plugin-summary';
 
-// Static assets will vary depending on the application
-const copyConfig = {
-  targets: [
-    { src: 'node_modules/@webcomponents', dest: 'build/node_modules' },
-    { src: 'images', dest: 'build' },
-    { src: 'data', dest: 'build' },
-    { src: 'index.html', dest: 'build' },
+export default {
+  plugins: [
+    // Entry point for application build; can specify a glob to build multiple
+    // HTML files for non-SPA app
+    html({
+      input: 'index.html',
+    }),
+    // Resolve bare module specifiers to relative paths
+    resolve(),
+    // Minify HTML template literals
+    minifyHTML(),
+    // Minify JS
+    terser({
+      ecma: 2020,
+      module: true,
+      warnings: true,
+    }),
+    // Print bundle summary
+    summary(),
+    // Optional: copy any static assets to build directory
+    copy({
+      patterns: ['images/**/*'],
+    }),
   ],
-};
-
-// The main JavaScript bundle for modern browsers that support
-// JavaScript modules and other ES2015+ features.
-const config = {
-  input: 'dist/index.js',
   output: {
     dir: 'build',
-    format: 'es',
   },
-  plugins: [
-    minifyHTML(),
-    copy(copyConfig),
-    resolve(),
-  ],
-  preserveEntrySignatures: false,
+  preserveEntrySignatures: 'strict',
 };
-
-if (process.env.NODE_ENV !== 'development') {
-  config.plugins.push(terser());
-}
-
-export default config;
