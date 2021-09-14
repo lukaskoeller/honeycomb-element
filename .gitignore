@@ -22,3 +22,6 @@
 /out-tsc/
 
 storybook-static
+
+# docs
+/docs/
