@@ -23,40 +23,27 @@ Another way to use the component is via the [CDN UNPKG](https://unpkg.com/browse
   
   <honeycomb-element></honeycomb-element>
 ```
+## Properties
 The `<honeycomb-element>` allows one property naming `items`. This way, the honeycomb is provided with content.
-## Linting with ESLint, Prettier, and Types
-To scan the project for linting errors, run
-```bash
-npm run lint
+The `items` property is of type `array` which itself holds a maximum of 7 nested arrays. These nested arrays contain
+of a maximum of 7 `objects` following the `ItemInterface`. Be aware, that the first nested array only contains one object
+which represents the center element which does not expand on click.
+
+```js
+export interface ItemInterface {
+  /** Heading of hexagon */
+  heading: string;
+  /** Content displayed below heading. Also functions as sub heading. */
+  content?: string;
+  /** Image placed within the hexagon */
+  image?: {
+    /** URL to image */
+    src: string;
+    /** Title of image applied to title attribute */
+    title?: string;
+  };
+}
 ```
-
-You can lint with ESLint and Prettier individually as well
-```bash
-npm run lint:eslint
-```
-```bash
-npm run lint:prettier
-```
-
-To automatically fix many linting errors, run
-```bash
-npm run format
-```
-
-You can format using ESLint and Prettier individually as well
-```bash
-npm run format:eslint
-```
-```bash
-npm run format:prettier
-```
-
-
-## Tooling configs
-
-For most of the tools, the configuration is in the `package.json` to reduce the amount of files in your project.
-
-If you customize the configuration a lot, you can consider moving them to individual files.
 
 ## Local Demo with `web-dev-server`
 ```bash
