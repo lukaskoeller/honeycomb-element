@@ -90,6 +90,7 @@ export class HoneycombElement extends LitElement {
 
       cursor: pointer;
 
+      will-change: transform;
       transition: var(--transition);
     }
 
