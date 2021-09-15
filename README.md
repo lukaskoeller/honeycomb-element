@@ -16,6 +16,8 @@ npm i honeycomb-element
 <honeycomb-element></honeycomb-element>
 ```
 Another way to use the component is via the [CDN UNPKG](https://unpkg.com/browse/honeycomb-element@latest/).
+
+Import as module:
 ```html
 <script type="module">
   import 'https://unpkg.com/honeycomb-element@latest/build/honeycomb-element.bundled.js';
@@ -23,6 +25,18 @@ Another way to use the component is via the [CDN UNPKG](https://unpkg.com/browse
 
 <honeycomb-element></honeycomb-element>
 ```
+
+Import as usual `<script>`:
+```html
+<head>
+  <title>Honeycomb Element</title>
+  <script src="https://unpkg.com/honeycomb-element@1.1.4/build/honeycomb-element.bundled.js" type="module"></script>
+</head>
+<body>
+  <honeycomb-element></honeycomb-element>
+</body>
+```
+
 Note that the keyword `@latest` always points to the latest version of the honeycomb element. If you rather want to stick to a specific version, just replace `latest`
 with the according [version number](https://unpkg.com/browse/honeycomb-element@latest/) (e.g. `@1.1.4`).
 ## Properties
@@ -48,6 +62,9 @@ export interface ItemInterface {
   };
 }
 ```
+
+## CSS Custom Properties
+![CSS Custom Properties](./css-custom-properties.png)
 
 ## Local Demo with `web-dev-server`
 ```bash

@@ -14,6 +14,8 @@
   <script type="module">
     import { html, render } from 'lit-html';
     import '../dist/honeycomb-element.js';
+    import 'https://unpkg.com/api-viewer-element?module';
+
 
     const items = [
     [
@@ -218,5 +220,6 @@
       document.querySelector('#demo')
     );
   </script>
+  <api-viewer src="../custom-elements.json"></api-viewer>
 </body>
 </html>
