@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.6](https://github.com/lukaskoeller/honeycomb-element/compare/v1.1.5...v1.1.6) (2021-09-19)
+
+
+### Bug Fixes
+
+* fallback to better supported css properties ([5562aa3](https://github.com/lukaskoeller/honeycomb-element/commit/5562aa3f5e15e58e0961065c9ca79dbe31196779)), closes [#3](https://github.com/lukaskoeller/honeycomb-element/issues/3)
+
 ### [1.1.5](https://github.com/lukaskoeller/honeycomb-element/compare/v1.1.4...v1.1.5) (2021-09-15)
 
 
