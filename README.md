@@ -49,7 +49,7 @@ Import as usual `<script>`:
 ```
 
 Note that the keyword `@latest` always points to the latest version of the honeycomb element. If you rather want to stick to a specific version, just replace `latest`
-with the according [version number](https://unpkg.com/browse/honeycomb-element@latest/) (e.g. `@1.1.4`).
+with the according [version number](https://unpkg.com/browse/honeycomb-element@latest/) (e.g. `@1.1.7`).
 
 ## Properties
 The `<honeycomb-element>` allows one property naming `items`. This way, the honeycomb is provided with content.
