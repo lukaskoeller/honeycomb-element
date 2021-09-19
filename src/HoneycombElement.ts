@@ -24,7 +24,7 @@ export class HoneycombElement extends LitElement {
     :host {
       --honeycomb-font-family: 'FlamaSemicondensed', 'Roboto Condensed',
         'Helvetica Neue', Arial, sans-serif;
-      --honeycomb-global-size: 160px;
+      --honeycomb-global-size: min(calc(100vw / 5), calc(100vh / 5.5));
       --honeycomb-primary-color: hsl(0, 0%, 0%);
       --honeycomb-text-color: #fff;
       --primary-color-lighten-1: hsl(0, 0%, 80%);
@@ -33,7 +33,7 @@ export class HoneycombElement extends LitElement {
       --transition: 0.35s ease;
       --base-spacing: 4px;
       --base-radius: 4px;
-      --font-size: 100%;
+      --font-size: clamp(0.6rem, -0.875rem + 8.333vw, 3.5rem);
 
       font-family: var(--honeycomb-font-family);
       font-size: var(--font-size);
@@ -54,8 +54,8 @@ export class HoneycombElement extends LitElement {
       left: 50%;
       margin-left: calc(var(--size) / -2);
       margin-top: calc(var(--size) / -2);
-      aspect-ratio: 1/1;
       width: min(100%, var(--size));
+      height: min(100%, var(--size));
 
       transition: var(--transition);
     }
@@ -83,7 +83,7 @@ export class HoneycombElement extends LitElement {
       place-items: center;
 
       width: var(--size);
-      aspect-ratio: 1/1;
+      height: var(--size);
       clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
       background-color: var(--honeycomb-primary-color, #000);
       overflow: hidden;

@@ -26,7 +26,7 @@ Import as module:
 <honeycomb-element></honeycomb-element>
 ```
 
-Import as usual `<script>`:
+Import as usual `<script>` of type module:
 ```html
 <head>
   <title>Honeycomb Element</title>
@@ -37,8 +37,20 @@ Import as usual `<script>`:
 </body>
 ```
 
+Import as usual `<script>`:
+```html
+<head>
+  <title>Honeycomb Element</title>
+  <script src="https://unpkg.com/honeycomb-element@1.1.4/build/honeycomb-element.bundled.js"></script>
+</head>
+<body>
+  <honeycomb-element></honeycomb-element>
+</body>
+```
+
 Note that the keyword `@latest` always points to the latest version of the honeycomb element. If you rather want to stick to a specific version, just replace `latest`
 with the according [version number](https://unpkg.com/browse/honeycomb-element@latest/) (e.g. `@1.1.4`).
+
 ## Properties
 The `<honeycomb-element>` allows one property naming `items`. This way, the honeycomb is provided with content.
 The `items` property is of type `array` which itself holds a maximum of 7 nested arrays. These nested arrays contain
@@ -46,6 +58,13 @@ of a maximum of 7 `objects` following the `ItemInterface`. Be aware, that the fi
 which represents the center element which does not expand on click.
 
 For an example, see the [`/demo`](./demo) directory.
+
+It is recommended to attach `items` to the element as follows:
+
+```js
+const honeycombEl = document.querySelector("honeycomb-element");
+honeycombEl.items = [ /* items come here */ ];
+```
 
 ```js
 export interface ItemInterface {
