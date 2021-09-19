@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.7](https://github.com/lukaskoeller/honeycomb-element/compare/v1.1.6...v1.1.7) (2021-09-19)
+
+
+### Bug Fixes
+
+* no build:prod made for new version ([e477fed](https://github.com/lukaskoeller/honeycomb-element/commit/e477fed7ce79657db5f8f8952af67f6d12ad93e3))
+
 ### [1.1.6](https://github.com/lukaskoeller/honeycomb-element/compare/v1.1.5...v1.1.6) (2021-09-19)
 
 
