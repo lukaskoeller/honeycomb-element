@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/lukaskoeller/honeycomb-element/compare/v1.1.7...v1.2.0) (2021-10-02)
+
+
+### Features
+
+* remove bg img from layout ([fd5388f](https://github.com/lukaskoeller/honeycomb-element/commit/fd5388ff0ec768ca05482551054e4ea4cfa86926))
+
 ### [1.1.7](https://github.com/lukaskoeller/honeycomb-element/compare/v1.1.6...v1.1.7) (2021-09-19)
 
 
