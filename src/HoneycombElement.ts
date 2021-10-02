@@ -1,6 +1,5 @@
 import { html, css, LitElement, property, state } from 'lit-element';
 import { classMap } from 'lit-html/directives/class-map';
-import { styleMap } from 'lit-html/directives/style-map.js';
 
 /**
  * @description Represents one hexagon of the complete honeycomb.
@@ -203,13 +202,6 @@ export class HoneycombElement extends LitElement {
                   ${group.map(
                     (item, index1: Number) => html`
                       <div
-                        style=${styleMap({
-                          ...(item?.image?.src
-                            ? { backgroundImage: `url('${item?.image?.src}')` }
-                            : {}),
-                          backgroundSize: 'cover',
-                          backgroundPosition: 'center center',
-                        })}
                         data-index=${index}
                         class=${classMap({
                           item: true,
