@@ -15,7 +15,7 @@
     "build:prod": "rollup -c",
     "build:docs": "typedoc src/HoneycombElement.ts",
     "prepublish": "tsc",
-    "publish": "npx standard-version && npm run build:prod && git push --follow-tags origin main && npm publish",
+    "publish": "npm run build:prod && git push --follow-tags origin main && npm publish",
     "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",
     "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore",
     "version": "npx standard-version"
