@@ -1,6 +1,6 @@
 {
   "name": "honeycomb-element",
-  "version": "1.2.1",
+  "version": "1.2.0",
   "description": "Webcomponent honeycomb-element following open-wc recommendations",
   "author": "honeycomb-element",
   "license": "MIT",
@@ -15,7 +15,7 @@
     "build:prod": "rollup -c",
     "build:docs": "typedoc src/HoneycombElement.ts",
     "prepublish": "tsc",
-    "publish": "npm run build && git push --follow-tags origin main && npm publish",
+    "publish": "npx standard-version && npm run build:prod && git push --follow-tags origin main && npm publish",
     "lint": "eslint --ext .ts,.html . --ignore-path .gitignore && prettier \"**/*.ts\" --check --ignore-path .gitignore",
     "format": "eslint --ext .ts,.html . --fix --ignore-path .gitignore && prettier \"**/*.ts\" --write --ignore-path .gitignore",
     "version": "npx standard-version"
