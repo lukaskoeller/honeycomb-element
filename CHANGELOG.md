@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.2](https://github.com/lukaskoeller/honeycomb-element/compare/v1.2.1...v1.2.2) (2021-10-02)
+
+
+### Bug Fixes
+
+* make build for prod using build:prod (rollup) ([af51b55](https://github.com/lukaskoeller/honeycomb-element/commit/af51b552f23f7198a7dc2f52182b948fc60a96c0))
+
 ### [1.2.1](https://github.com/lukaskoeller/honeycomb-element/compare/v1.2.0...v1.2.1) (2021-10-02)
 
 
