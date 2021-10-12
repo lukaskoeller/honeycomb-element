@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/lukaskoeller/honeycomb-element/compare/v1.2.2...v1.3.0) (2021-10-12)
+
+
+### Features
+
+* adjust styles to avoid text overflow ([ec92efd](https://github.com/lukaskoeller/honeycomb-element/commit/ec92efd04d3fff682939ab306cd240b8dcd43882))
+
 ### [1.2.2](https://github.com/lukaskoeller/honeycomb-element/compare/v1.2.1...v1.2.2) (2021-10-02)
 
 
