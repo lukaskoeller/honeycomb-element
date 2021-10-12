@@ -158,8 +158,9 @@ export class HoneycombElement extends LitElement {
     .heading {
       /* width: 75%; */
       margin: 0 auto;
-      text-align: center;
+      font-weight: bold;
       font-size: var(--font-size);
+      text-align: center;
       text-transform: uppercase;
     }
 
