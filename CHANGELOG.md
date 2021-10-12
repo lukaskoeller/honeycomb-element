@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/lukaskoeller/honeycomb-element/compare/v1.3.0...v1.4.0) (2021-10-12)
+
+
+### Features
+
+* explicitly set heading to font-weight bold ([6b300bb](https://github.com/lukaskoeller/honeycomb-element/commit/6b300bb052695526d6640ee6db4dcbfc51dd6765))
+
 ## [1.3.0](https://github.com/lukaskoeller/honeycomb-element/compare/v1.2.2...v1.3.0) (2021-10-12)
 
 
