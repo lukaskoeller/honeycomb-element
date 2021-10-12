@@ -32,7 +32,7 @@ export class HoneycombElement extends LitElement {
       --transition: 0.35s ease;
       --base-spacing: 4px;
       --base-radius: 4px;
-      --font-size: clamp(0.6rem, -0.875rem + 8.333vw, 3.5rem);
+      --font-size: clamp(0.4rem, 1.85vw, 0.8rem);
 
       font-family: var(--honeycomb-font-family);
       font-size: var(--font-size);
@@ -91,6 +91,10 @@ export class HoneycombElement extends LitElement {
 
       will-change: transform;
       transition: var(--transition);
+    }
+
+    .item > div {
+      width: 100%;
     }
 
     .image {
@@ -152,12 +156,25 @@ export class HoneycombElement extends LitElement {
     }
 
     .heading {
-      font-size: 0.9rem;
+      /* width: 75%; */
+      margin: 0 auto;
+      text-align: center;
+      font-size: var(--font-size);
       text-transform: uppercase;
     }
 
     .content {
-      font-size: 0.8rem;
+      font-size: var(--font-size);
+    }
+
+    @media only screen and (max-width: 560px) {
+      .content {
+        display: none;
+      }
+
+      .image {
+        display: none;
+      }
     }
 
     code {
